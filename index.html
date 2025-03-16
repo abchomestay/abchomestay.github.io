@@ -7,70 +7,87 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <style>
+<style>
         body {
             background: url(images/park.jpg) no-repeat center;
             background-size: cover;
             min-height: 100vh;
-            margin-top: 50;
+            margin: 0; /* Remove default margin */
             overflow: hidden;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
 
         /* For mobile devices */
-@media (max-width: 768px) {
-    body {
-        background: url(images/park-phone.jpg) no-repeat center;
-        background-size: cover;
+        @media (max-width: 768px) {
+            body {
+                background: url(images/park-phone.jpg) no-repeat center;
+                background-size: cover;
+            }
         }
-    }
+
         nav {
             display: flex;
             flex-direction: column;
             gap: 20px;
             padding: 20px;
             --text: #fff;
-            margin: 12vh auto;
-            width: fit-content;
             justify-content: center; /* Vertically center */
-            align-items: center;
+            align-items: center; /* Horizontally center */
+            width: fit-content;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* Glass effect with blur */
+            border-radius: 10px; /* Rounded corners for the navbar */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for a more "glassy" effect */
+            transition: background 0.3s ease; /* Smooth transition for background color */
         }
 
         nav a {
-    display: inline-flex;
-    gap: 9px;
-    padding: 0 1em 0 0;
-    text-decoration: none;
-    font-family: "DM Sans", sans-serif;
-    font-size: 40px;
-    overflow: hidden;
-    white-space: nowrap;
-}
+            display: inline-flex;
+            gap: 9px;
+            padding: 0 1em 0 0;
+            text-decoration: none;
+            font-family: "DM Sans", sans-serif;
+            font-size: 40px;
+            overflow: hidden;
+            white-space: nowrap;
+            color: var(--text); /* Text color */
+            transition: all 0.5s ease;
+        }
 
-nav a i,
-nav a span {
-    color: var(--text);
-    transition: all 0.5s ease;
-    text-shadow: 0 1.1em 0 var(--text);
-}
+        nav a i,
+        nav a span {
+            color: var(--text);
+            transition: all 0.5s ease;
+            text-shadow: 0 1.1em 0 var(--text);
+        }
 
-nav a span {
-    font-weight: 600;
-    transition: all 0.4s ease;
-}
+        nav a span {
+            font-weight: 600;
+            transition: all 0.4s ease;
+        }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    nav {
-        margin: 5vh auto; /* Adjust margin for mobile */
-        padding: 10px; /* Adjust padding for mobile */
-    }
+        /* On hover, change navbar background color */
+        nav a:hover {
+            color: #ff6347; /* Change text color on hover (tomato color for example) */
+        }
 
-    nav a {
-        font-size: 30px; /* Smaller font size for mobile */
-    }
-}
+        nav:hover {
+            background: rgba(255, 255, 255, 0.3); /* Darken the background on hover */
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                margin: 0; /* Remove margins for mobile */
+                padding: 10px; /* Adjust padding for mobile */
+            }
+
+            nav a {
+                font-size: 30px; /* Smaller font size for mobile */
+            }
+        }
     </style>
 </head>
 <body>
