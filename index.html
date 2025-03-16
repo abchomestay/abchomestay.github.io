@@ -14,6 +14,14 @@
             min-height: 100vh;
             overflow: hidden;
         }
+
+        /* For mobile devices */
+@media (max-width: 768px) {
+    body {
+        background: url(images/park-phone.jpg) no-repeat center;
+        background-size: cover;
+        }
+    }
         nav {
             display: flex;
             flex-direction: column;
@@ -25,34 +33,41 @@
             justify-content: center; /* Vertically center */
             align-items: center;
         }
+
         nav a {
-            display: inline-flex;
-            gap: 9px;
-            padding: 0 1em 0 0;
-            text-decoration: none;
-            font-family: "DM Sans", sans-serif;
-            font-size: 40px;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        nav a i,
-        nav a span {
-            color: var(--text);
-            transition: all 0.5s ease;
-            text-shadow: 0 1.1em 0 var(--text);
-        }
-        nav a span {
-            font-weight: 600;
-            transition: all 0.4s ease;
-        }
-        nav a:hover {
-            filter: drop-shadow(0 0 6px var(--text));
-        }
-        nav a:hover i,
-        nav a:hover span {
-            color: transparent;
-            transform: translate(0.2em, -1.1em);
-        }
+    display: inline-flex;
+    gap: 9px;
+    padding: 0 1em 0 0;
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+nav a i,
+nav a span {
+    color: var(--text);
+    transition: all 0.5s ease;
+    text-shadow: 0 1.1em 0 var(--text);
+}
+
+nav a span {
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    nav {
+        margin: 5vh auto; /* Adjust margin for mobile */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    nav a {
+        font-size: 30px; /* Smaller font size for mobile */
+    }
+}
     </style>
 </head>
 <body>
